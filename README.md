@@ -4,5 +4,5 @@
 
 ### What exactly does this project ? ###
  
-Online shop
+Online store
  
