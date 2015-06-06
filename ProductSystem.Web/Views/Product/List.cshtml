@@ -1,0 +1,26 @@
+﻿@model IEnumerable<ProductSystem.Web.Models.ProductViewModel>
+@{
+    ViewBag.Title = "Products";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@foreach (var product in Model)
+{
+    <div class="row">
+        <div class="col-sm-1">
+            <img src="@product.ImgURL" style="width: 100%; height: 100%;" />
+        </div> 
+        <div class="col-sm-2">
+            @product.Manufacturer @product.Model
+        </div> 
+        <div class="col-sm-3">
+            <p><a class="btn btn-default" href="@Url.Action("Details", "Product", new { product.Id })">Price @product.Price $</a></p>
+        </div> 
+        <br>
+    </div>
+}
+@for (int i = 1; i <= ViewBag.Pages; i++)
+{
+    <a href="@Url.Action("List", new { id = i })">@i</a>
+}
